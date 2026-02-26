@@ -1,0 +1,127 @@
+.select2-container {
+    width: 100% !important;
+    max-width:77.77%; /* Sama dengan sm:w-2/3 */
+}
+
+/* Styling pada box Select2 */
+.select2-container .select2-selection--single {
+    height: 40px !important;
+    border: 2px solid #F9B72C !important; 
+    border-radius: 7px !important;
+    padding: 5px 10px !important;
+    display: flex;
+    align-items: center;
+}
+
+.select2-selection__placeholder {
+    color: #9CA3AF !important;
+    font-size: medium !important; 
+    font-weight: lighter;
+    opacity: 1 !important;
+}
+
+
+.select2-container {
+    max-width: 66.66%; /* Sama dengan sm:w-2/3 */
+}
+
+@media (max-width: 640px) { /* Untuk layar kecil */
+    .select2-container {
+        max-width: 100%;
+    }
+}
+
+
+/* Styling untuk print rencana kerja */
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-info td {
+    padding: 5px;
+}
+
+.work-plan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.work-plan th{
+    
+    padding: 8px;
+    text-align: center;
+}
+
+
+
+/* Mode cetak */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .no-print {
+        display: none; 
+    }
+
+    /* Menyembunyikan bagian scroll agar tidak tercetak */
+    .relative.overflow-x-auto {
+        overflow: visible;
+        max-height: none;
+    }
+
+    .work-plan {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .work-plan th, .work-plan td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #000;
+    }
+
+    .laporan-kerja {
+        width: 100%; 
+        display: block;
+        page-break-before: always;
+    }
+
+    .laporan-kerja .work-plan {
+        width: 100%; 
+        table-layout: auto; 
+    }
+
+    .laporan-kerja .work-plan th,
+    .laporan-kerja .work-plan td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #000;
+        white-space: nowrap;
+    }
+
+    /* Memastikan laporan kerja tetap terlihat di berbagai ukuran kertas */
+    @page {
+        margin: 1cm; 
+        scale: 75;
+    }
+
+    .only-print {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* jadwal kerja */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+/* print rencana kerja */
+.only-print {
+    display: none;
+}
